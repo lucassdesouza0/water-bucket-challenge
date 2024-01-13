@@ -21,7 +21,7 @@ export default function WaterBucket({
 		capacity,
 	});
 
-	const bucketStyle = `relative w-48 h-64 border-2 border-gray-300 mx-auto rounded-b-3xl`;
+	const bucketStyle = `relative w-48 h-64 border-2 border-gray-300 mx-auto rounded-b-3xl hover:border-indigo-200 hover:shadow-xl`;
 	const bucketInsideStyle = `absolute top-0 w-full h-full bg-white overflow-hidden h-[100%] rounded-b-3xl `;
 	const waterStyle = `absolute flex flex-col justify-center bottom-0 w-full bg-indigo-300 transition-height ease-in-out duration-300 rounded-b-xl text-center`;
 

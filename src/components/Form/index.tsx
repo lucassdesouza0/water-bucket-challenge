@@ -27,7 +27,7 @@ export default function Form({ onFormSubmit }: FormProps) {
 						<input
 							id="jugX"
 							data-testid="jugX-input"
-							className=" p-4 rounded-lg drop-shadow-xl border-2 border-gray-200 appearance-none"
+							className=" p-4 rounded-lg drop-shadow-xl border-2 border-gray-200 appearance-none hover:border-indigo-200"
 							value={jugX}
 							onChange={(e) => setJugX(Number(e.target.value))}
 						/>
@@ -37,7 +37,7 @@ export default function Form({ onFormSubmit }: FormProps) {
 						<input
 							id="jugY"
 							data-testid="jugY-input"
-							className=" p-4 rounded-lg drop-shadow-xl border-2 border-gray-200 appearance-none"
+							className=" p-4 rounded-lg drop-shadow-xl border-2 border-gray-200 appearance-none hover:border-indigo-200"
 							value={jugY}
 							onChange={(e) => setJugY(Number(e.target.value))}
 						/>
@@ -47,7 +47,7 @@ export default function Form({ onFormSubmit }: FormProps) {
 						<input
 							id="target"
 							data-testid="target-input"
-							className=" p-4 rounded-lg drop-shadow-xl border-2 border-gray-200 appearance-none"
+							className=" p-4 rounded-lg drop-shadow-xl border-2 border-gray-200 appearance-none hover:border-indigo-200"
 							value={target}
 							onChange={(e) => setTarget(Number(e.target.value))}
 						/>
