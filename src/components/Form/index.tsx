@@ -15,39 +15,48 @@ export default function Form({ onFormSubmit }: FormProps) {
 	};
 
 	return (
-		<div className="flex items-center justify-center ">
+		<div className="flex items-center justify-center p-5">
 			<form
 				onSubmit={handleSubmit}
 				className="p-6 rounded-lg space-y-4 items-center flex flex-col gap-4"
 				data-testid="form"
 			>
 				<div className="flex items-center space-x-4">
-					<label className="text-black" htmlFor="jugX">
+					<label
+						className="flex flex-col items-center text-2xl text-black"
+						htmlFor="jugX"
+					>
 						Jug X Capacity:
 						<input
 							id="jugX"
 							data-testid="jugX-input"
-							className=" p-4 rounded-lg drop-shadow-xl border-2 border-gray-200 appearance-none hover:border-indigo-200"
+							className=" flex p-4 rounded-lg drop-shadow-xl border-2 border-gray-200 appearance-none hover:border-indigo-200 w-1/3 sm:w-full "
 							value={jugX}
 							onChange={(e) => setJugX(Number(e.target.value))}
 						/>
 					</label>
-					<label className="text-black" htmlFor="jugY">
+					<label
+						className="flex flex-col items-center text-2xl text-black"
+						htmlFor="jugY"
+					>
 						Jug Y Capacity:
 						<input
 							id="jugY"
 							data-testid="jugY-input"
-							className=" p-4 rounded-lg drop-shadow-xl border-2 border-gray-200 appearance-none hover:border-indigo-200"
+							className=" p-4 rounded-lg drop-shadow-xl border-2 border-gray-200 appearance-none hover:border-indigo-200 w-1/3 sm:w-full "
 							value={jugY}
 							onChange={(e) => setJugY(Number(e.target.value))}
 						/>
 					</label>
-					<label className="text-black" htmlFor="target">
+					<label
+						className="flex flex-col items-center text-2xl text-black"
+						htmlFor="target"
+					>
 						Target Amount:
 						<input
 							id="target"
 							data-testid="target-input"
-							className=" p-4 rounded-lg drop-shadow-xl border-2 border-gray-200 appearance-none hover:border-indigo-200"
+							className=" p-4 rounded-lg drop-shadow-xl border-2 border-gray-200 appearance-none hover:border-indigo-200 w-1/3 sm:w-full "
 							value={target}
 							onChange={(e) => setTarget(Number(e.target.value))}
 						/>
