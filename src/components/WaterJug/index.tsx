@@ -1,7 +1,7 @@
 "use client";
 
 import { JugAction } from "@/services/waterJugSolver";
-import JugIcon from "../JugIcon";
+import JugIcon from "@/components/BucketIcon";
 import useJugAnimation from "@/hooks/useBucketAnimation";
 
 interface WaterJugProps {
@@ -20,8 +20,6 @@ export default function WaterJug({
 		isXJug,
 		capacity,
 	});
-
-	console.log("actions", actions);
 
 	const jugStyle = `relative w-48 h-64 border-2 border-gray-300 mx-auto rounded-b-3xl hover:border-indigo-200 hover:shadow-xl`;
 	const jugInsideStyle = `absolute top-0 w-full h-full bg-white overflow-hidden h-[100%] rounded-b-3xl `;
