@@ -5,9 +5,9 @@ interface FormProps {
 }
 
 export default function Form({ onFormSubmit }: FormProps) {
-	const [jugX, setJugX] = useState<number>();
-	const [jugY, setJugY] = useState<number>();
-	const [target, setTarget] = useState<number>();
+	const [jugX, setJugX] = useState<number>(0);
+	const [jugY, setJugY] = useState<number>(0);
+	const [target, setTarget] = useState<number>(0);
 
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();

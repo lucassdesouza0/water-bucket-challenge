@@ -1,4 +1,4 @@
-import waterJugSolver from "./jiggleSolver";
+import waterJugSolver from "./waterJugSolver";
 
 const largeNumbers = [
 	{ action: "FILL_JUG_Y", jugX: 0, jugY: 2000 },
@@ -91,7 +91,6 @@ describe("waterJugSolver Tests", () => {
 	});
 
 	test("Handles a target of zero", () => {
-		const targetZeroSolution: [] = [];
-		expect(waterJugSolver(3, 5, 0)).toEqual(targetZeroSolution);
+		expect(waterJugSolver(3, 5, 0)).toEqual(false);
 	});
 });

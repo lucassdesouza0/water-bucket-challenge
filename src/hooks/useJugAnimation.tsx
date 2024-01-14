@@ -1,36 +1,36 @@
-import { JugAction } from "@/services/jiggleSolver";
+import { JugAction } from "@/services/waterJugSolver";
 import { useEffect, useState } from "react";
 
-interface UseBucketAnimationProps {
+interface UseJugAnimationProps {
 	actions: JugAction[];
 	isXJug: boolean;
 	capacity: { jugX: number; jugY: number };
 }
 
 /**
- * Custom hook for managing the animation of water level in a bucket.
+ * Custom hook for managing the animation of water level in a jug.
  *
  * This hook sets up an interval to update the local action state based on
  * a sequence of actions. Each action updates the height of the water in
- * the bucket to visually represent the current state of the water jug problem.
+ * the jug to visually represent the current state of the water jug problem.
  * The hook handles the timing of these updates to create a step-by-step animation.
  *
  * @param actions An array of JugAction objects representing the sequence of actions
  *                to be animated.
- * @param isXJug A boolean indicating whether the current bucket is 'X' or 'Y'.
+ * @param isXJug A boolean indicating whether the current jug is 'X' or 'Y'.
  *               This determines which jug's state (jugX or jugY) to use for the animation.
  * @param capacity An object containing the capacities of the jugs (jugX and jugY).
- *                       Used to calculate the relative height of water in the bucket.
+ *                       Used to calculate the relative height of water in the jug.
  *
  * @returns An object containing the current action (`localAction`) and the calculated
  *          height of the water (`height`) for the current step of the animation.
  */
 
-export default function useBucketAnimation({
+export default function useJugAnimation({
 	actions,
 	isXJug,
 	capacity,
-}: UseBucketAnimationProps): { localAction: JugAction; height: string } {
+}: UseJugAnimationProps): { localAction: JugAction; height: string } {
 	const [localAction, setLocalAction] = useState<JugAction>(actions[0]);
 
 	useEffect(() => {

@@ -1,13 +1,13 @@
 "use client";
 
-import { JugAction } from "@/services/jiggleSolver";
+import { JugAction } from "@/services/waterJugSolver";
 import React, { createContext, useState, useContext } from "react";
 
 type ActionsContextType = {
 	actions: JugAction[];
 	setActions: React.Dispatch<React.SetStateAction<JugAction[]>>;
-	bucketCapacity: { jugX: number; jugY: number };
-	setBucketCapacity: React.Dispatch<
+	jugCapacity: { jugX: number; jugY: number };
+	setJugCapacity: React.Dispatch<
 		React.SetStateAction<{ jugX: number; jugY: number }>
 	>;
 };
@@ -20,11 +20,11 @@ export const ActionsProvider = ({
 	children: React.ReactNode;
 }) => {
 	const [actions, setActions] = useState<JugAction[]>([]);
-	const [bucketCapacity, setBucketCapacity] = useState({ jugX: 0, jugY: 0 });
+	const [jugCapacity, setJugCapacity] = useState({ jugX: 0, jugY: 0 });
 
 	return (
 		<ActionsContext.Provider
-			value={{ actions, setActions, bucketCapacity, setBucketCapacity }}
+			value={{ actions, setActions, jugCapacity, setJugCapacity }}
 		>
 			{children}
 		</ActionsContext.Provider>

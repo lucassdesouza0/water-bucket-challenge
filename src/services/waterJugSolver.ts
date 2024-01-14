@@ -36,7 +36,7 @@ export default function waterJugSolver(
 		return false;
 	}
 
-	if (target > Math.max(jugX, jugY) || Math.min(jugX, jugY) <= 0) {
+	if (target > Math.max(jugX, jugY) || Math.min(jugX, jugY, target) <= 0) {
 		return false;
 	}
 

@@ -4,8 +4,7 @@ import ArrowRightIcon from "@/icons/ArrowRight";
 import BeakerIcon from "@/icons/Beaker";
 import { ActionKey } from "@/constants/actions";
 
-interface BucketIconProps
-	extends Omit<React.HTMLProps<HTMLDivElement>, "action"> {
+interface JugIconProps extends Omit<React.HTMLProps<HTMLDivElement>, "action"> {
 	action: ActionKey;
 	isXJug?: boolean;
 }
@@ -14,11 +13,11 @@ type IconType = {
 	[key in ActionKey]: JSX.Element | false;
 };
 
-export default function BucketIcon({
+export default function JugIcon({
 	action,
 	isXJug = false,
 	...props
-}: BucketIconProps) {
+}: JugIconProps) {
 	const icons: IconType = {
 		EMPTY_JUG_X: isXJug && <TrashIcon {...props} />,
 		EMPTY_JUG_Y: !isXJug && <TrashIcon {...props} />,

@@ -1,31 +1,31 @@
 "use client";
 
-import { JugAction } from "@/services/jiggleSolver";
-import BucketIcon from "../BucketIcon";
-import useBucketAnimation from "@/hooks/useBucketAnimation";
+import { JugAction } from "@/services/waterJugSolver";
+import JugIcon from "../JugIcon";
+import useJugAnimation from "@/hooks/useJugAnimation";
 
-interface WaterBucketProps {
+interface WaterJugProps {
 	capacity: { jugX: number; jugY: number };
 	isXJug?: boolean;
 	actions: JugAction[];
 }
 
-export default function WaterBucket({
+export default function WaterJug({
 	capacity,
 	isXJug = false,
 	actions,
-}: WaterBucketProps) {
-	const { localAction, height } = useBucketAnimation({
+}: WaterJugProps) {
+	const { localAction, height } = useJugAnimation({
 		actions,
 		isXJug,
 		capacity,
 	});
 
-	const bucketStyle = `relative w-48 h-64 border-2 border-gray-300 mx-auto rounded-b-3xl hover:border-indigo-200 hover:shadow-xl`;
-	const bucketInsideStyle = `absolute top-0 w-full h-full bg-white overflow-hidden h-[100%] rounded-b-3xl `;
+	const jugStyle = `relative w-48 h-64 border-2 border-gray-300 mx-auto rounded-b-3xl hover:border-indigo-200 hover:shadow-xl`;
+	const jugInsideStyle = `absolute top-0 w-full h-full bg-white overflow-hidden h-[100%] rounded-b-3xl `;
 	const waterStyle = `absolute flex flex-col justify-center bottom-0 w-full bg-indigo-300 transition-height ease-in-out duration-300 rounded-b-xl text-center`;
 
-	const testid = isXJug ? "bucket-x" : "bucket-y";
+	const testid = isXJug ? "jug-x" : "jug-y";
 
 	return (
 		<div
@@ -36,10 +36,10 @@ export default function WaterBucket({
 				className="text-center font-normal text-2xl"
 				data-testid={`${testid}-label`}
 			>
-				BUCKET {isXJug ? "X" : "Y"}
+				JUG {isXJug ? "X" : "Y"}
 			</h2>
-			<div className={bucketStyle}>
-				<div className={bucketInsideStyle}>
+			<div className={jugStyle}>
+				<div className={jugInsideStyle}>
 					<div
 						className={waterStyle}
 						style={{
@@ -51,7 +51,7 @@ export default function WaterBucket({
 							{isXJug ? localAction?.jugX : localAction?.jugY}
 						</span>
 					</div>
-					<BucketIcon
+					<JugIcon
 						action={localAction?.action!}
 						isXJug={isXJug}
 						className="absolute top-5 right-[30%] size-[5rem] text-black animate-pulse"
