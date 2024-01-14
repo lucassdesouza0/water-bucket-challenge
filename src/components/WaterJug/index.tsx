@@ -2,7 +2,7 @@
 
 import { JugAction } from "@/services/waterJugSolver";
 import JugIcon from "../JugIcon";
-import useJugAnimation from "@/hooks/useJugAnimation";
+import useJugAnimation from "@/hooks/useBucketAnimation";
 
 interface WaterJugProps {
 	capacity: { jugX: number; jugY: number };

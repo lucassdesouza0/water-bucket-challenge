@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import WaterJug from "./index";
-import useJugAnimation from "@/hooks/useJugAnimation";
+import useJugAnimation from "@/hooks/useBucketAnimation";
 import { FILL_JUG_Y } from "@/constants/actions";
 
 jest.mock("@/hooks/useJugAnimation", () => ({

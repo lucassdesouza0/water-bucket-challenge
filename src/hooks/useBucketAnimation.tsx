@@ -8,19 +8,19 @@ interface UseJugAnimationProps {
 }
 
 /**
- * Custom hook for managing the animation of water level in a jug.
+ * Custom hook for managing the animation of water level in a bucket.
  *
  * This hook sets up an interval to update the local action state based on
  * a sequence of actions. Each action updates the height of the water in
- * the jug to visually represent the current state of the water jug problem.
+ * the bucket to visually represent the current state of the water jug problem.
  * The hook handles the timing of these updates to create a step-by-step animation.
  *
  * @param actions An array of JugAction objects representing the sequence of actions
  *                to be animated.
- * @param isXJug A boolean indicating whether the current jug is 'X' or 'Y'.
+ * @param isXJug A boolean indicating whether the current bucket is 'X' or 'Y'.
  *               This determines which jug's state (jugX or jugY) to use for the animation.
  * @param capacity An object containing the capacities of the jugs (jugX and jugY).
- *                       Used to calculate the relative height of water in the jug.
+ *                       Used to calculate the relative height of water in the bucket.
  *
  * @returns An object containing the current action (`localAction`) and the calculated
  *          height of the water (`height`) for the current step of the animation.
